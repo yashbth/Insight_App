@@ -1,0 +1,162 @@
+.container-fluid{
+    width: 100%;
+    padding: 0px;
+}
+.deviceHead{
+    background-color:white;
+
+}
+.row{
+    margin: 0px;
+    padding: 10px 10px 0px;
+}
+.page-header{
+    width:100%;
+    padding: 10px 0px;
+    border-bottom: 2px solid #164b83
+}
+#id{
+    font-size: 23px;
+    font-family: monospace;
+    font-weight: 600 !important;
+    color:#008282;
+}
+.page-header h6{
+    font-size: 18px;
+}
+.circle_card{
+    /* margin-top: 30px; */
+    padding: 10px;
+    /* background-color: white; */
+    display: flex;
+    justify-content: space-evenly;
+}
+.circle{
+    border-radius: 50%;
+    background-color: #164b83;
+    height:140px;
+    width: 140px; 
+    margin: 10px;
+}
+.center{
+    font-weight: bold;
+    color: white;
+    width:120px;
+    font-family:Arial, Helvetica, sans-serif
+}
+.red{
+    background-color:#1e99eb !important;
+}
+.yellow{
+    background-color: rgb(157, 214, 72) !important;
+}
+.green{
+    background-color: rgb(157, 214, 72) !important;
+}
+.blue{
+    background-color: #f4ce51 !important;
+}
+.tip{
+    position: fixed;
+    bottom: 0%;
+    color: gray;
+    padding: 5px;
+    width:95% !important;
+
+}
+.align-center{
+    margin: 50px 0px;
+}
+.footer{
+    margin-top: 20px;
+}
+.value{
+    font-size: 25px;
+    font-weight: 700; 
+}
+.pages{
+    position: absolute;
+    margin: 0px 10px;
+    background: white
+}
+
+.middle{
+    position: absolute;
+    top:15vh;
+    
+}
+
+.thanks{
+    width:100%;
+}
+.tabs{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.credit{
+    font-size: 22px;
+}
+.info{
+    display: flex;
+    justify-content: center;
+}
+.extraLg{
+    text-align: center;
+    width: inherit;
+    color: #b79d59
+}
+.extraLg .count {
+    font-size: 17vw !important;
+}
+.num{
+    width:55vw;
+
+}
+.marginTop{
+    margin-top: 20px;
+}
+.title{
+    font-size:18px;
+}
+@media screen and (max-width:400px) and (max-height:650px){
+    .circle{
+        border-radius: 50%;
+        background-color: #164b83;
+        height:120px;
+        width: 120px; 
+        margin: 0px !important;
+    }
+    .circle_card{
+        padding-left:0px;
+        padding-right: 0px; 
+    }
+    .footer{
+        margin-top: 0px;
+    }
+    .align-center{
+        margin:0px;
+    }
+    h6{
+        font-size: .9rem;
+    }
+    .inner_box{
+        /* display: table-cell; */
+        padding: 0px;
+        /* margin:20px 0px !important; */
+        width:100%;
+    }
+    .title{
+        font-size:1rem;
+    }
+    .value{
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-height:550px){
+    .pages{
+        padding-top: 0px !important;
+    }
+
+}

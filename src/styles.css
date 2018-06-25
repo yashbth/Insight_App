@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background-color: white;
+    overflow: hidden;
+}
+@media screen and (orientation:landscape) {
+    .pages {
+      -ms-transform: rotate(-90deg); /* IE 9 */
+      -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+      transform: rotate(-90deg);
+      width: -webkit-fill-available;
+      height: -webkit-fill-available ;
+      overflow: scroll;
+    }
+    .circle{
+        border-radius: 50%;
+        background-color: #164b83;
+        height:20vh;
+        width: 20vh; 
+        margin: 2px 2px;
+    }
+    .circle_card{
+        padding-left:0px;
+        padding-right: 0px; 
+    }
+    .footer{
+        margin-top: 0px;
+    }
+  }

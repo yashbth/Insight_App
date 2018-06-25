@@ -1,0 +1,234 @@
+.container-fluid{
+    width: 100%;
+    padding: 0px;
+}
+.deviceHead{
+    background-color: rgba(128,179, 255,0.5);
+
+}
+.row{
+    margin: 0px;
+    padding: 10px 10px 0px;
+}
+.page-header{
+    width:100%;
+    padding: 10px 0px;
+    border-bottom: 2px solid #164b83
+}
+#id{
+    font-size: 23px;
+    font-family: monospace;
+    font-weight: 600 !important;
+    color:#164b83;
+}
+.page-header h6{
+    font-size: 18px;
+}
+.circle_card{
+    /* margin-top: 30px; */
+    padding: 10px;
+    /* background-color: white; */
+    display: flex;
+    justify-content: space-evenly;
+}
+.circle{
+    border-radius: 50%;
+    background-color: #164b83;
+    height:150px;
+    width: 150px; 
+    margin: 10px;
+}
+.center{
+
+    font-weight: bold;
+    color: white;
+    width:120px;
+    font-family:Arial, Helvetica, sans-serif
+}
+
+.tip{
+    position: fixed;
+    bottom: 0%;
+    color: gray;
+    padding: 5px
+}
+.align-center{
+    margin: 50px 0px;
+}
+.footer{
+    margin-top: 20px;
+}
+.count{
+    font-size: 25px;
+    font-weight: 700; 
+}
+.pages{
+    position: absolute;
+    margin: 0px 10px;
+    background: white;
+}
+
+.content{
+    padding: 8vh 0px;
+    
+}
+.tag{
+    font-size: 3vh;
+}
+.thanks{
+    width:100%;
+}
+.tabs{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.credit{
+    font-size: 2.7vh;
+    font-weight: 400;
+}
+.info{
+    display: flex;
+    justify-content: center;
+}
+.extraLg{
+    text-align: center;
+    width: inherit;
+    color: #164b83
+}
+.extraLg .count {
+    font-size: 17vw !important;
+}
+.num{
+    width:55vw;
+
+}
+.marginTop{
+    margin-top: 20px;
+}
+.display{
+    animation: opacity 2s ease-in;
+}
+.shareIcons{
+    margin: 30px;
+    margin-left: 12px !important;
+
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    padding-left: 0px;
+    list-style-type: none;
+
+}
+.havent{
+    padding:5vh 0;
+    margin-top: 5vh
+}
+a{
+    border-radius: 50%; 
+    width:51px;
+    height: 51px;
+    margin-right:10px 
+}
+.fa{
+    font-size:1.8em;
+    margin: 11px 0px;
+}
+.fb{
+    background: rgba(59,89,151,1);
+    /* padding: 10px 13px; */
+}
+.twitter{
+    background: rgba(2,172,237,1);
+    /* padding: 10px 10px; */
+
+}
+.lin{
+    /* padding: 10px 10px; */
+    background: rgba(2,119,181,1);
+}
+.fa {
+    color: white;
+}
+.widthcut{
+    width:80vw;
+}
+img{
+    width:33vw;
+    height:33vw;
+}
+img{
+    animation: rotate 1s cubic-bezier(0,0,0.2,1);
+    animation-iteration-count: 1;
+    animation-delay: 0s
+}
+@keyframes opacity {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}  
+@keyframes rotate{
+    from {transform: rotateY(0deg);}
+    /* 25% {transform: rotateY(300deg);}
+    50% { transform: rotateY(480deg)}
+    75% {transform: rotateY(640deg)} */
+    to {transform: rotateY(720deg)}
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+.hide{
+    opacity: 0;
+}
+@media screen and (max-width:400px){
+    .widthcut{
+        width:75vw;
+    }
+    .content{
+        padding: 0px;
+    }
+    .havent h2{
+        margin-top:0px;
+        font-size : 1.7rem;
+    }
+    .tag{
+        font-size: 2.7vh;
+    }
+    .shareIcons{
+        margin-top: 0px !important;
+        margin-left: 10px;
+    }
+    .tabs{
+        margin-top: 0px;
+    }
+
+}
+@media screen and (max-width:330px){
+    .content{
+        padding: 0px;
+    }
+    .havent{
+        margin-top:2vh;
+    }
+    .shareIcons{
+        margin-top: 0px !important;
+        margin-left: 10px;
+    }
+    .havent h2{
+        margin-top:0px;
+        font-size : 1.7rem;
+    }
+    .tag{
+        font-size: 2.7vh;
+    }
+    .shareIcons{
+        margin-top: 0px !important;
+        margin-left: 10px;
+    }
+    .tabs{
+        margin-top: 20px;
+    }
+
+}
+@media screen and (max-height:550px){
+    .row{
+        padding-top:0px !important; 
+    }
+}

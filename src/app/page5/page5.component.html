@@ -1,0 +1,50 @@
+<div class="pages page5 row h-100 text-center" [class.middle]="true" style="overflow:hidden">
+    <div class="animated thanks  content"  appSlide [currpage]="'page5'" [prevpage]="'page4'" [nextpage]="">
+      <div class="container-fluid ">
+        <div class="row ">
+            <div class="col-sm-12 tabs text-center animated">
+                <!-- <img src="/monitor/assets/unnamed.gif" class="img-responsive"/> -->
+                <img src="/assets/logo.png" class="img-responsive"/>
+            </div>
+          <span style="background-color: #f6f6f6" class="havent" >
+              <div class="col-12 animated zoomIn " >
+                  <h2>
+                    Haven't tried yet ?
+                  </h2>
+                </div>
+                <div class="col-12 animated fadeIn">
+                    <div class="text-center tag marginTop padding">
+                        By dispensing 1 litre of water from this Water ATM you do <b>more than one</b> tree’s daily work.<br>
+                      <b class="animated fadeInUp">1.56145 to be precise </b>😉<br>
+                    </div>
+                  </div>
+          </span>
+
+          <div class="col-12 " style="position: fixed;bottom: 0;" *ngIf="welcomeGesture">
+            <!-- <div class="col-12 widthcut">
+                <h5>
+                    <span class="credit animated fadeInUp">We appreciate your choice! <span id="smiley">😊</span></span> 
+                  </h5>
+            </div> -->
+            <div class="col-12 widthcut">
+                <h5>
+                    <span class="credit " [class.display]="moreDetails" [class.hide]="!moreDetails" >For more details visit <a href="https://swajal.in">swajal.in </a></span> 
+                </h5>
+            </div>
+            
+            <div class="col-12 widthcut  shareIcons" [class.display]="moreDetails" [class.hide]="!moreDetails">
+                <h6>Share your results:</h6>
+                <span class="flex">
+                    <a class="fb" id="fb" href="https://www.facebook.com/dialog/share?app_id=145634995501895&display=popup&href=https%3A%2F%2Fswajal.in%2Fmonitor%2F#%2F{{service.cluster}}%2F{{service.id}}%2Fpage1&redirect_uri=https%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Fexplorer"><i class="fa fa-facebook"></i></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?related=%5Bu%27Swajal15%27%2C%20u%27Monitor%27%2C%20u%27Swajal%27%2C%20u%27WaterATM%27%5D&url=https%3A%2F%2Fwww.swajal.in%2F%23%2F{{service.cluster}}%2F{{service.id}}%2Fpage1&text=Do%20you%20know%20what%20this%20Swajal%20water%20ATM%20can%20do?%20Find%20out%20at&original_referer=http%3A%2F%2Fswajal.in/monitor%2F"><i class="fa fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&url={{url}}&title=Swajal%20Dashboard%20Network&summary=Have%20you%20tried%20it?&source=LinkedIn" class="lin"><i class="fa fa-linkedin"></i></a>
+                    <!-- <div class="sharethis-inline-share-buttons"></div> -->
+                </span>
+            </div>
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,35 @@
+<span class="pages page2 h-100 row" style="overflow:hidden">
+    <div class="animated thanks align-self-center" appSlide [currpage]="'page2'" [prevpage]="'page1'" [nextpage]="'page3'">
+      <div class="container-fluid middle_pages">
+        <div class="row animated">
+          <div class="col-12 img">
+              <!-- <img src="/monitor/assets/Trees_3sec.gif"  class="img1 img-responsive"/> -->
+              <img src="/assets/Trees_3sec.gif"  class="img1 img-responsive"/>
+          </div>
+          <div class="col-12 tabs text-center">
+            <div class="row info">
+              <div class="col-12 text-center num">
+                <div clas="intro">
+                    <h6 style="font-weight: 400">
+                      This machine is currently equivalent<br> 
+                      <span class="extraLg page2_counter" ><b>{{tree_equivalent}}</b></span><br>
+                      <span> <b>trees</b>.</span><br>
+                    </h6>
+                  </div>
+              </div>
+              <div class="col-12 text-center num marginTop">
+                <div style="padding:10px;">
+                    <h5>
+                      <p>
+                          It prevents <b>{{Co2[0]}} {{ Co2[1]}}</b> of CO2 emission in <b>1 year</b>. It would take the average tree in {{service.location}} <b>{{tree_equivalent}} years</b> to absorb the same amount.
+                      </p>
+                    </h5>
+                  </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+</span>

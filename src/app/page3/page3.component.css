@@ -1,0 +1,95 @@
+.container-fluid{
+    width: 100%;
+    padding: 0px;
+}
+
+.row{
+    margin: 0px;
+    padding: 10px 10px 0px;
+}
+.page-header{
+    width:100%;
+    padding: 10px 0px;
+    border-bottom: 2px solid #164b83
+}
+#id{
+    font-size: 23px;
+    font-family: monospace;
+    font-weight: 600 !important;
+    color:#164b83;
+}
+.page-header h6{
+    font-size: 18px;
+}
+
+.center{
+    position: absolute;
+    top:30%;
+    font-weight: bold;
+    color: white;
+    width:120px;
+    font-family:Arial, Helvetica, sans-serif
+}
+.tip{
+    position: fixed;
+    bottom: 0%;
+    color: gray;
+    padding: 5px
+}
+.align-center{
+    margin: 50px 0px;
+}
+.count{
+    font-size: 25px;
+    font-weight: 700; 
+}
+.pages{
+    position: absolute;
+    margin:0px 10px;
+    background: white;
+}
+
+
+.thanks{
+    width:100%;
+    background: #f6f6f6;
+}
+.tabs{
+    display: flex;
+    justify-content: center;
+
+}
+.credit{
+    font-size: 22px;
+}
+.info{
+    display: flex;
+    justify-content: center;
+    background-color: #f6f6f6;
+    padding: 80px 0px;
+}
+
+.extraLg{
+    text-align: center;
+    width: inherit;
+    color: black
+}
+.extraLg span,i  {
+    font-size: 2.2em ;
+    color: #b79d59;
+}
+.num{
+    width:55vw;
+
+}
+.marginTop{
+    margin-top: -15px;
+}
+small{
+    font-size: 17px;
+}
+@media screen and (max-width:350px){
+    .row{
+        padding: 0px;                                                                                                                                                                                                                                                                                                                                                                                                                                           
+    }
+}

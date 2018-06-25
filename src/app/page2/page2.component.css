@@ -1,0 +1,120 @@
+.container-fluid{
+    width: 100%;
+    padding: 0px;
+}
+
+.row{
+    margin: 0px;
+    /* padding: 10px 10px 0px; */
+}
+.page-header{
+    width:100%;
+    padding: 10px 0px;
+    border-bottom: 2px solid #164b83
+}
+#id{
+    font-size: 23px;
+    font-family: monospace;
+    font-weight: 600 !important;
+    color:#164b83;
+}
+.page-header h6{
+    font-size: 18px;
+}
+
+.center{
+    position: absolute;
+    top:30%;
+    font-weight: bold;
+    color: white;
+    width:120px;
+    font-family:Arial, Helvetica, sans-serif
+}
+.tip{
+    position: fixed;
+    bottom: 0%;
+    color: gray;
+    padding: 5px
+}
+.align-center{
+    margin: 50px 0px;
+}
+.count{
+    font-size: 25px;
+    font-weight: 700; 
+}
+.pages{
+    position: absolute;
+    margin: 0px 10px;
+    background-color: white;
+}
+
+.middle{
+    position: absolute;
+    top:15vh;
+    
+}
+
+.thanks{
+    width:95%;
+    margin: auto;
+}
+.tabs{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.credit{
+    font-size: 22px;
+}
+.info{
+    display: flex;
+    justify-content: center;
+}
+.extraLg{
+    text-align: center;
+    width: inherit;
+    color: #119b10;
+    font-size: 80px !important;
+
+}
+.num{
+    /* padding:15px; */
+    background-color: #f6f6f6
+}
+.marginTop{
+    margin-top: 20px;
+
+}
+.bold{
+    font-weight: 500;
+}
+p{
+    font-size: 18px;
+    font-weight: 400;
+}
+.img1{
+    width:100%;
+    min-height: 75vw;
+}
+.col-12{
+    padding: 0px;
+}
+h6{
+    font-size: 18px;
+}
+@media screen and (max-height:580px){
+    h5{
+        margin-bottom: 0px !important; 
+    }
+    p{
+        margin-bottom: 0px !important;
+    }
+    h6{
+        font-size: 16px;
+    }
+    .extraLg{
+        font-size: 3.5rem !important;
+    }
+    
+}
