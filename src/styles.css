@@ -4,26 +4,13 @@ body{
     overflow: hidden;
 }
 @media screen and (orientation:landscape) {
-    .pages {
-      -ms-transform: rotate(-90deg); /* IE 9 */
-      -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
-      transform: rotate(-90deg);
-      width: -webkit-fill-available;
-      height: -webkit-fill-available ;
-      overflow: scroll;
+    .pages{
+        display: none;
     }
-    .circle{
-        border-radius: 50%;
-        background-color: #164b83;
-        height:20vh;
-        width: 20vh; 
-        margin: 2px 2px;
+    body{
+        background-color: black !important;
     }
-    .circle_card{
-        padding-left:0px;
-        padding-right: 0px; 
-    }
-    .footer{
-        margin-top: 0px;
+    .err{
+        display: block !important;
     }
   }

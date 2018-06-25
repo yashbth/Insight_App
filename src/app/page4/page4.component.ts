@@ -23,7 +23,7 @@ export class Page4Component implements OnInit {
     this.x = this.formatToUnits(this.service.water_info[1]["Total_Volume_Dispensed"],0);
     // x = this.formatToUnits(500,0);
   
-    this.weight = this.weightUnits(this.x[0],2);
+    this.weight = this.weightUnits(this.service.water_info[1]["Total_Volume_Dispensed"],2);
   }
   ngAfterViewInit(){
   console.log(this.x);

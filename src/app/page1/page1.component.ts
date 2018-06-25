@@ -43,7 +43,7 @@ export class Page1Component implements OnInit {
           this.water_info[1]=$.extend( this.water_info[1],this.ro_info[0] );
           this.service.water_info=this.water_info;
           this.service.location= this.ro_info[0]['Location']; 
-          this.service.averageVolume(this.water_info);
+          this.service.average_volume=this.service.averageVolume(this.water_info);
           // console.log(this.water_info);
           this.dataAvailable=true;
           $('.pH_of_water').html(this.water_info[1]['pH_of_water']);

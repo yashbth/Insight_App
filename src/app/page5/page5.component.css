@@ -110,8 +110,8 @@
     animation: opacity 2s ease-in;
 }
 .shareIcons{
-    margin: 30px;
-    margin-left: 12px !important;
+    margin-top: 30px;
+    margin-bottom: 30px;
 
 }
 .flex{

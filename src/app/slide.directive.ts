@@ -18,7 +18,7 @@ export class SlideDirective implements AfterContentChecked {
 
   }
   ngAfterContentChecked() {
-      console.log(!SlideDirective.hammerInitialized)
+  
       if (!SlideDirective.hammerInitialized && (this.prevpage!='' && this.nextpage !='')) {
 
           let hammertime = new Hammer(this.el.nativeElement);
@@ -42,6 +42,13 @@ export class SlideDirective implements AfterContentChecked {
               this.router.navigateByUrl('/'+this.service.cluster+'/'+this.service.id+'/'+this.prevpage);
 
           });
+          hammertime.on("tap",(ev)=>{
+            let nextpage= this.nextpage;
+            console.log(this.nextpage);
+          //   $('.'+this.currpage).addClass("slideOutUp");
+            SlideDirective.hammerInitialized=false;
+          this.router.navigateByUrl('/'+this.service.cluster+'/'+this.service.id+'/'+this.nextpage);
+          })
         SlideDirective.hammerInitialized=true;
 
       }

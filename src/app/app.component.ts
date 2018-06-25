@@ -19,7 +19,7 @@ export class AppComponent {
 
   
    ngOnInit(){
-    screen.msLockOrientation('potrait');
+    
    }
 
 }

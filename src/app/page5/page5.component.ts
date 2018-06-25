@@ -28,7 +28,7 @@ export class Page5Component implements OnInit {
           this.welcomeGesture=true;
           setTimeout(()=>{
             this.moreDetails=true;
-            this.url="https://swajal.in/monitor/#/"+this.service.cluster+'/'+this.service.id+'/page1';
+            this.url="https://swajal.in/monitor/%23/"+this.service.cluster+'/'+this.service.id+'/page1';
           },100)
 
     },300);

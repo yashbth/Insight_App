@@ -2,7 +2,7 @@
     <div class="container-fluid deviceHead">
       <div class="row text-center">
           <div class="page-header">
-            <h4>{{title}} <span id="id">{{id}}</span></h4>
+            <h4>{{title}} <span id="id">{{service.id}}</span></h4>
             <h6>Location :{{ro_info[0].Location}}</h6>
           </div>
       </div>
@@ -37,6 +37,6 @@
     </div>
     
     <div class="container tip text-center animated fadeInUp" *ngIf="flag">
-      <h6>Tip: Control the app with simple up and down slides</h6>
+      <h6>Tip: Control the app with simple up and down swipes.</h6>
     </div>
   </div>

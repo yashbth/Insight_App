@@ -21,7 +21,7 @@ export class Page2Component implements OnInit {
       window.location.reload();
     }
     this.Co2=this.weightUnits(this.service.water_info[1]["Total_Volume_Dispensed"],2);
-    this.tree_equivalent= Math.floor(this.service.water_info[1]["Total_Volume_Dispensed"]*0.093/0.0596);
+    this.tree_equivalent= Math.floor(this.service.average_volume*0.093/0.0596);
   }
   ngAfterViewInit(){
     this.count();
