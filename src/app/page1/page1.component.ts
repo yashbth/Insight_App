@@ -23,36 +23,68 @@ export class Page1Component implements OnInit {
   table2;
   dataAvailable=false;
   flag=false;
+  share : boolean = false;
+  status: string = "Let's see";
 
   constructor(private dataService : FetchDataService, private service: GlobalService,private router :Router,private route : ActivatedRoute,private Cluster : Cluster) {
    
    }
 
   ngOnInit() {
+    this.service.currPage=1;
+    if(this.service.page5_flag){
+      this.share=true;
+      this.status="Share";
+
+    }
     $('body').css({"backgroundColor":"#008282"});
     // $('body').css("backgroundColor","#b79d59");
-    setTimeout(()=>{
-      this.service.cluster = this.route.snapshot.paramMap.get('cluster');
-      this.service.id= this.route.snapshot.paramMap.get('id');
-      this.tables()
-      this.dataService.getData(this.service.id,this.table1,'id_info.php').subscribe(info=>this.water_info=info,(err)=>console.log(err),()=>{
-        this.dataService.getData(this.service.id,this.table2,'tds_info.php').subscribe(info=>this.ro_info=info,(err)=>console.log(err),()=>{
-          for(let row of this.water_info){
-            row["Total_Volume_Dispensed"] = row["Total_Volume_Dispensed"].replace(",","");
-          }
-          this.water_info[1]=$.extend( this.water_info[1],this.ro_info[0] );
-          this.service.water_info=this.water_info;
-          this.service.location= this.ro_info[0]['Location']; 
-          this.service.average_volume=this.service.averageVolume(this.water_info);
-          // console.log(this.water_info);
-          this.dataAvailable=true;
-          $('.pH_of_water').html(this.water_info[1]['pH_of_water']);
-          $('.tds_inlet').html(this.water_info[1]['tds_inlet']);
-          $('.tds_outlet').html(this.water_info[1]['tds_outlet']);
-          this.count('count');
-        });
+
+    if(!this.service.info_flag){
+      setTimeout(()=>{
+        this.service.cluster = this.route.snapshot.paramMap.get('cluster');
+        this.service.id= this.route.snapshot.paramMap.get('id');
+        this.tables()
+        this.dataService.getData(this.service.id,this.table1,'id_info.php').subscribe(info=>this.water_info=info,(err)=>console.log(err),()=>{
+          this.dataService.getData(this.service.id,this.table2,'tds_info.php').subscribe(info=>this.ro_info=info,(err)=>console.log(err),()=>{
+            console.log(this.water_info,'called1');
+            
+            for(let row of this.water_info){
+              row["Total_Volume_Dispensed"] = row["Total_Volume_Dispensed"].replace(",","");
+            }
+            this.water_info[1]=$.extend( this.water_info[1],this.ro_info[0] );
+            this.service.water_info=this.water_info;
+            this.service.ro_info=this.ro_info;
+            this.service.location= this.ro_info[0]['Location']; 
+            this.service.average_volume=this.service.averageVolume(this.water_info);
+          
+            console.log(this.water_info,this.service.average_volume,'called2');
+            this.dataAvailable=true;
+            $('.pH_of_water').html(this.water_info[1]['pH_of_water']);
+            $('.tds_inlet').html(this.water_info[1]['tds_inlet']);
+            $('.tds_outlet').html(this.water_info[1]['tds_outlet']);
+            this.count('count');
+          });
+        })
+        this.service.info_flag = true;
       })
-    })
+    }
+    else{
+      setTimeout(()=>{
+      
+        this.water_info = this.service.water_info;
+        this.ro_info = this.service.ro_info;
+        this.dataAvailable=true;
+        $('.pH_of_water').html(this.water_info[1]['pH_of_water']);
+        $('.tds_inlet').html(this.water_info[1]['tds_inlet']);
+        $('.tds_outlet').html(this.water_info[1]['tds_outlet']);
+        this.count('count');
+
+     })
+
+
+    }
+
 
 
   }

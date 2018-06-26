@@ -10,9 +10,11 @@ declare var $:any;
 export class Page4Component implements OnInit {
   x=[];
   weight=[];
+  rand : string = Math.random().toString();
   constructor(private service : GlobalService,private router : Router,private route : ActivatedRoute) { }
 
   ngOnInit() {
+    this.service.currPage=4;
     // $('body').css({"backgroundColor":"#008282"});
     $('body').css({"backgroundColor":"black"});
     console.log(!this.service.location)
@@ -20,10 +22,10 @@ export class Page4Component implements OnInit {
       this.router.navigate(['../page1'],{relativeTo: this.route});
       window.location.reload();
     }
-    this.x = this.formatToUnits(this.service.water_info[1]["Total_Volume_Dispensed"],0);
+    this.x = this.formatToUnits(this.service.water_info[0]["Total_Volume_Dispensed"],0);
     // x = this.formatToUnits(500,0);
   
-    this.weight = this.weightUnits(this.service.water_info[1]["Total_Volume_Dispensed"],2);
+    this.weight = this.weightUnits(this.service.water_info[0]["Total_Volume_Dispensed"],2);
   }
   ngAfterViewInit(){
   console.log(this.x);

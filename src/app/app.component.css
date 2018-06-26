@@ -1,7 +1,7 @@
 .err{
-    background-color: black;
+    background-color: white;
     height: -webkit-fill-available !important;
     margin: 45vh 25vw; 
     display: none;
-    color: white;
+    color: black;
 }
