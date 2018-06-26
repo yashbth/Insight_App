@@ -18,10 +18,11 @@ export class Page3Component implements OnInit {
     console.log(!this.service.location);
     if(!this.service.location){
       this.router.navigate(['../page1'],{relativeTo: this.route});
-      window.location.reload();
+      this.service.hammerInitialized=false;
+
     }
     // $('body').css({"backgroundColor":"#b79d59"});
-  this.x=this.service.water_info[1]["Total_Volume_Dispensed"]*15;
+  this.x=this.service.water_info[0]["Total_Volume_Dispensed"]*15;
   // this.x =10001;
   console.log(this.service.water_info,this.x);
 
@@ -33,10 +34,10 @@ export class Page3Component implements OnInit {
   }
  ngAfterContentChecked(){
    if(this.x>10000){
-    $('.page3_counter,.fa').css({"font-size":"1.8em"})
+    $('.page3_counter,.inr').css({"font-size":"1.8em"})
    }
    if(this.x>100000){
-    $('.page3_counter,.fa').css({"font-size":"1.5em"})
+    $('.page3_counter,.inr').css({"font-size":"1.5em"})
    }
  }
   count(){

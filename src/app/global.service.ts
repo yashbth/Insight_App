@@ -10,9 +10,10 @@ export class GlobalService {
   page4 : boolean=false;
   page5 : boolean=false;
   page6 : boolean = false;
-  hammerInitialized = true;
+  hammerInitialized =false;
   average_volume;
   flag:boolean=false;
+  dataAvailable:boolean=false;;
   id:string;
   location: string;
   cluster:string;

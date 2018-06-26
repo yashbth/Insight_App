@@ -17,7 +17,7 @@
             $location=$row1['Location'];
 }   
 } 
-    $sql2 = "SELECT tds_inlet,tds_outlet FROM $table WHERE DeviceID='$id' ORDER BY date DESC LIMIT 1";
+    $sql2 = "SELECT tds_inlet,tds_outlet FROM $table WHERE DeviceID='$id' ORDER BY SrNo DESC LIMIT 1";
     $result = $conn->query($sql2);
     if($result->num_rows>0){
         $all_rows = array();        

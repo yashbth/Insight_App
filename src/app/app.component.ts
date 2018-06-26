@@ -11,7 +11,7 @@ declare var jQuery : any;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
+  load=false;
 
   constructor(){
 
@@ -19,7 +19,7 @@ export class AppComponent {
 
   
    ngOnInit(){
-    
+
    }
 
 }

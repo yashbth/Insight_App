@@ -18,9 +18,10 @@ export class Page2Component implements OnInit {
     $('body').css({"backgroundColor":"#b4c95e"});
     if(!this.service.location){
       this.router.navigate(['../page1'],{relativeTo: this.route});
-      window.location.reload();
+      // window.location.reload();
+      this.service.hammerInitialized=false;
     }
-    this.Co2=this.weightUnits(this.service.water_info[1]["Total_Volume_Dispensed"],2);
+    this.Co2=this.weightUnits(this.service.water_info[0]["Total_Volume_Dispensed"],2);
     this.tree_equivalent= Math.floor(this.service.average_volume*0.093/0.0596);
   }
   ngAfterViewInit(){

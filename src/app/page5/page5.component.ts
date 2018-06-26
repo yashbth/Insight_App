@@ -21,7 +21,8 @@ export class Page5Component implements OnInit {
     // console.log(!this.service.location)
     if(!this.service.location){
       this.router.navigate(['../page1'],{relativeTo: this.route});
-      window.location.reload();
+      this.service.hammerInitialized=false;
+
 
     }
     setTimeout(()=>{
