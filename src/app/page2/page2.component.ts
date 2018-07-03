@@ -11,9 +11,12 @@ export class Page2Component implements OnInit {
   intro="This machine is currently equivalent to"
   Co2=[];
   tree_equivalent;
+  rand : string = Math.random().toString();
+
   constructor(private service : GlobalService ,private router : Router,private route : ActivatedRoute) { }
 
   ngOnInit() {
+    this.service.currPage=2;
     // $('body').css({"backgroundColor":"#008282"});
     $('body').css({"backgroundColor":"#b4c95e"});
     if(!this.service.location){
@@ -40,7 +43,6 @@ export class Page2Component implements OnInit {
     const order = Math.max(0, Math.min(unrangifiedOrder, abbrev.length -1 ))
     
     const suffix = abbrev[order];
-    console.log(suffix,order,unrangifiedOrder,number);
     let numberWithSuffix= [(number / Math.pow(10, order * 3)).toFixed(precision),suffix];
     return numberWithSuffix;
   }

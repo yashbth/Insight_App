@@ -16,6 +16,8 @@ export class Page5Component implements OnInit {
   constructor(private service : GlobalService,private router : Router,private route : ActivatedRoute) { }
 
   ngOnInit() {
+    this.service.currPage=5;
+    this.service.page5_flag=true;
     $('body').css({"backgroundColor":"#008282"});
     // $('body').css({"backgroundColor":"#008282"});
     // console.log(!this.service.location)

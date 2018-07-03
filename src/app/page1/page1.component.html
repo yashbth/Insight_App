@@ -2,8 +2,7 @@
     <div class="container-fluid deviceHead">
       <div class="row text-center">
           <div class="page-header">
-            <h4>{{title}} <span id="id">{{service.id}}</span></h4>
-            <h6>Location : {{service.location}}</h6>
+            <h5>Location : <span id="id">{{service.location}}</span></h5>
           </div>
       </div>
     </div>
@@ -29,14 +28,21 @@
             <div class="row">
               <div class="page-footer animated zoomIn" *ngIf="flag">
                  <h5>
-                   Let's see what this machine has achieved so far!
+                   {{status}} what this machine has achieved so far!
                  </h5> 
+                <div class="col-12 widthcut  shareIcons" *ngIf="share">
+                  <span class="flex">
+                      <a class="fb" id="fb" href="https://www.facebook.com/dialog/share?app_id=145634995501895&display=popup&href=https%3A%2F%2Fswajal.in%2Fmonitor%2F#%2F{{service.cluster}}%2F{{service.id}}%2Fpage1&redirect_uri=https%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Fexplorer"><i class="fa fa-facebook"></i></a>
+                      <a class="twitter" href="https://twitter.com/intent/tweet?related=%5Bu%27Swajal15%27%2C%20u%27Monitor%27%2C%20u%27Swajal%27%2C%20u%27WaterATM%27%5D&url=https%3A%2F%2Fwww.swajal.in%2F%23%2F{{service.cluster}}%2F{{service.id}}%2Fpage1&text=Do%20you%20know%20what%20this%20Swajal%20water%20ATM%20can%20do?%20Find%20out%20at&original_referer=http%3A%2F%2Fswajal.in/monitor%2F"><i class="fa fa-twitter"></i></a>
+                      <a href="https://www.linkedin.com/shareArticle?mini=true&url={{url}}&title=Insight&summary=Have%20you%20tried%20it?&source=LinkedIn" class="lin"><i class="fa fa-linkedin"></i></a>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
     </div>
     
-    <div class="container tip text-center animated fadeInUp" *ngIf="flag">
+    <div class="container tip text-center animated fadeInUp" *ngIf="flag&&!share">
       <h6>Tip: Control the app with simple up and down swipes.</h6>
     </div>
   </div>

@@ -41,14 +41,18 @@ export class SlideDirective implements AfterContentChecked {
               this.router.navigateByUrl('/'+this.service.cluster+'/'+this.service.id+'/'+this.prevpage);
 
           });
-          hammertime.on("tap",(ev)=>{
-            let nextpage= this.nextpage;
-            console.log(this.nextpage);
-          //   $('.'+this.currpage).addClass("slideOutUp");
-            this.service.hammerInitialized=false;
-          this.router.navigateByUrl('/'+this.service.cluster+'/'+this.service.id+'/'+this.nextpage);
-          })
-        this.service.hammerInitialized=true;
+          if(!(this.service.page5_flag&&this.service.currPage==1)){
+            hammertime.on("tap",(ev)=>{
+              let nextpage= this.nextpage;
+              console.log(this.nextpage);
+            //   $('.'+this.currpage).addClass("slideOutUp");
+              this.service.hammerInitialized=false;
+            this.router.navigateByUrl('/'+this.service.cluster+'/'+this.service.id+'/'+this.nextpage);
+            })
+          }
+          this.service.hammerInitialized=true;
+
+
 
       }
 

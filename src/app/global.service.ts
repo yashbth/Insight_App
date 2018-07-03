@@ -10,7 +10,10 @@ export class GlobalService {
   page4 : boolean=false;
   page5 : boolean=false;
   page6 : boolean = false;
-  hammerInitialized =false;
+  info_flag: boolean = false;
+  page5_flag: boolean = false;
+  currPage: number;
+  hammerInitialized = false;
   average_volume;
   flag:boolean=false;
   dataAvailable:boolean=false;;

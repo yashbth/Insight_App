@@ -23,14 +23,24 @@ export class Page1Component implements OnInit {
   table2;
   dataAvailable=false;
   flag=false;
+  share : boolean = false;
+  status: string = "Let's see";
+
   constructor(private dataService : FetchDataService, private service: GlobalService,private router :Router,private route : ActivatedRoute,private Cluster : Cluster) {
    
    }
 
   ngOnInit() {
+    this.service.currPage=1;
+    if(this.service.page5_flag){
+      this.share=true;
+      this.status="Share";
+
+    }
     $('body').css({"backgroundColor":"#008282"});
     // $('body').css("backgroundColor","#b79d59");
-    if(!this.service.dataAvailable){
+
+    if(!this.service.info_flag){
       setTimeout(()=>{
         this.service.cluster = this.route.snapshot.paramMap.get('cluster');
         this.service.id= this.route.snapshot.paramMap.get('id');
@@ -54,7 +64,7 @@ export class Page1Component implements OnInit {
           });
         })
       })
-      this.service.dataAvailable=true;
+      this.service.info_flag=true;
 
     }
 
@@ -62,7 +72,7 @@ export class Page1Component implements OnInit {
 
   }
   ngAfterViewInit(){
-    if(this.service.dataAvailable){
+    if(this.service.info_flag){
       $('.pH_of_water').html(this.service.water_info[0]['pH_of_water']);
       $('.tds_inlet').html(this.service.water_info[0]['tds_inlet']);
       $('.tds_outlet').html(this.service.water_info[0]['tds_outlet']);

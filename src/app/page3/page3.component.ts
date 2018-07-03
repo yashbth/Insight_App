@@ -13,6 +13,7 @@ export class Page3Component implements OnInit {
   constructor(private service : GlobalService,private router : Router,private route : ActivatedRoute) { }
 
   ngOnInit() {
+    this.service.currPage=3;
     $('body').css({"backgroundColor":"#b79d59"});
     // $('body').css({"backgroundColor":"#f4ce51 !important"});
     console.log(!this.service.location);
