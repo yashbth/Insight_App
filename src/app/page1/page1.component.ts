@@ -1,4 +1,4 @@
-import { Component, OnInit,AfterViewInit, } from '@angular/core';
+import { Component, OnInit,AfterViewInit, AfterContentChecked} from '@angular/core';
 import { FetchDataService } from '../fetch-data.service';
 import { GlobalService } from '../global.service';
 import { Cluster} from '../cluster';
@@ -16,7 +16,8 @@ export class Page1Component implements OnInit {
   title = 'ID :';
   id :string= "VSDMDV11802AAY";
   location : string = "Gwal Pahri";
-  circular_cards=[{title:"pH",name:"pH_of_water",color:"blue",unit:""},{title:"Tds Inlet",name:"tds_inlet",color:"red",unit:""},{title:"Tds Outlet",name:"tds_outlet",color:"green",unit:""},];
+  circular_cards=[];
+  monitor_access=[];
   water_info =[];
   ro_info=[];
   table1;
@@ -27,27 +28,69 @@ export class Page1Component implements OnInit {
   status: string = "Let's see";
 
   constructor(private dataService : FetchDataService, private service: GlobalService,private router :Router,private route : ActivatedRoute,private Cluster : Cluster) {
-   
+    if(!this.service.info_flag){
+      this.service.cluster = this.route.snapshot.paramMap.get('cluster');
+      this.service.id= this.route.snapshot.paramMap.get('id');
+      this.tables()
+
+        this.dataService.getData(this.service.id,this.table2,'tds_info.php').subscribe(info=>this.ro_info=info,(err)=>console.log(err),()=>{
+          
+          this.service.monitor_access=this.ro_info[0]['monitor_access']=='1';
+          this.service.pH_access=this.ro_info[0]['pH_access']=='1'
+          this.service.tds_access=this.ro_info[0]['tds_access']=='1'
+
+          if(this.service.monitor_access){
+    
+            if(this.service.pH_access){
+              this.circular_cards.push({title:"pH",name:"pH_of_water",color:"blue",unit:""});
+            }
+            if(this.service.tds_access){
+              this.circular_cards.push({title:"Tds Inlet",name:"tds_inlet",color:"red",unit:""});
+              this.circular_cards.push({title:"Tds Outlet",name:"tds_outlet",color:"green",unit:""});
+            }
+          }
+          else{
+            window.location.href= 'https://swajal.in/';
+          }
+        });
+      }
+      else{
+        if(this.service.pH_access){
+          this.circular_cards.push({title:"pH",name:"pH_of_water",color:"blue",unit:""});
+        }
+        if(this.service.tds_access){
+          this.circular_cards.push({title:"Tds Inlet",name:"tds_inlet",color:"red",unit:""});
+          this.circular_cards.push({title:"Tds Outlet",name:"tds_outlet",color:"green",unit:""});
+        }
+      }
+
+  
    }
 
   ngOnInit() {
+
     this.service.currPage=1;
     if(this.service.page5_flag){
       this.share=true;
       this.status="Share";
 
     }
+    if(this.service.info_flag){
+      $('.zoomIn').css({"animation-delay":"1500ms"});
+      $('.fadeInUp').css({"animation-delay":"1600ms"});
+    }
     $('body').css({"backgroundColor":"#008282"});
     // $('body').css("backgroundColor","#b79d59");
 
     if(!this.service.info_flag){
       setTimeout(()=>{
+
+
         this.service.cluster = this.route.snapshot.paramMap.get('cluster');
         this.service.id= this.route.snapshot.paramMap.get('id');
         this.tables()
         this.dataService.getData(this.service.id,this.table1,'id_info.php').subscribe(info=>this.water_info=info,(err)=>console.log(err),()=>{
           this.dataService.getData(this.service.id,this.table2,'tds_info.php').subscribe(info=>this.ro_info=info,(err)=>console.log(err),()=>{
-            console.log(this.water_info,'called1');
             
             for(let row of this.water_info){
               row["Total_Volume_Dispensed"] = row["Total_Volume_Dispensed"].replace(",","");
@@ -70,6 +113,7 @@ export class Page1Component implements OnInit {
       })
     }
     else{
+
       setTimeout(()=>{
       
         this.water_info = this.service.water_info;
@@ -87,10 +131,14 @@ export class Page1Component implements OnInit {
 
 
 
+
   }
-  ngAfterViewInit(){
+  
+  ngAfterContentChecked(){        
     
   }
+
+  
 
   tables(){
     console.log(this.service.cluster)

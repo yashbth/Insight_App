@@ -10,6 +10,10 @@ export class GlobalService {
   page4 : boolean=false;
   page5 : boolean=false;
   page6 : boolean = false;
+  monitor_access : boolean = false;
+  pH_access : boolean = false;
+  tds_access : boolean = false;
+
   info_flag: boolean = false;
   page5_flag: boolean = false;
   currPage: number;

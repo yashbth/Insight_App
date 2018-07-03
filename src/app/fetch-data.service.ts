@@ -11,7 +11,7 @@ export class FetchDataService {
   Device
   constructor( private http : HttpClient,private service : GlobalService) { }
   url="https://swajal.in/monitor/assets/Php/"
-  // url="http://localhost:8000/assets/Php/"
+  // url="http://localhost/~yashbahetiiitk/swajal_dashboard/src/assets/Php/"
   getData(id,table,filename):Observable<Info[]>{
     let data=new FormData();
     data.append('id',id);

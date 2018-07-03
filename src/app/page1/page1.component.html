@@ -27,9 +27,9 @@
           </div>
           <div class="container footer text-center">
             <div class="row">
-              <div class="page-footer animated zoomIn" *ngIf="flag">
+              <div class="page-footer animated zoomIn" >
                  <h5>
-                   {{status}} what this machine has achieved so far!
+                   {{status}} what this WaterATM has achieved so far!
                  </h5> 
                 <div class="col-12 widthcut  shareIcons" *ngIf="share">
                   <span class="flex">
@@ -43,7 +43,7 @@
           </div>
     </div>
     
-    <div class="container tip text-center animated fadeInUp" *ngIf="flag&&!share">
+    <div class="container tip text-center animated fadeInUp" *ngIf="!share">
       <h6>Tip: Control the app with simple up and down swipes.</h6>
     </div>
   </div>
