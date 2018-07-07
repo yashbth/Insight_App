@@ -13,13 +13,12 @@ export class SlideDirective implements AfterContentChecked {
   @Input('currpage') currpage:String;
   @Input('nextpage') nextpage:String;
   @Output() onGesture = new EventEmitter();
-   static hammerInitialized = false;
   constructor(private el: ElementRef,private service : GlobalService,private router : Router) {
 
   }
   ngAfterContentChecked() {
   
-      if (!SlideDirective.hammerInitialized && (this.prevpage!='' && this.nextpage !='')) {
+      if (!this.service.hammerInitialized && (this.prevpage!='' && this.nextpage !='')) {
 
           let hammertime = new Hammer(this.el.nativeElement);
           hammertime.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
@@ -28,7 +27,7 @@ export class SlideDirective implements AfterContentChecked {
               let nextpage= this.nextpage;
               console.log(this.nextpage);
             //   $('.'+this.currpage).addClass("slideOutUp");
-              SlideDirective.hammerInitialized=false;
+              this.service.hammerInitialized=false;
             this.router.navigateByUrl('/'+this.service.cluster+'/'+this.service.id+'/'+this.nextpage);
 
           });
@@ -38,7 +37,7 @@ export class SlideDirective implements AfterContentChecked {
               this.onGesture.emit("swipedown");
               let prevpage= this.prevpage;
 
-              SlideDirective.hammerInitialized=false;
+              this.service.hammerInitialized=false;
               this.router.navigateByUrl('/'+this.service.cluster+'/'+this.service.id+'/'+this.prevpage);
 
           });
@@ -47,11 +46,11 @@ export class SlideDirective implements AfterContentChecked {
               let nextpage= this.nextpage;
               console.log(this.nextpage);
             //   $('.'+this.currpage).addClass("slideOutUp");
-              SlideDirective.hammerInitialized=false;
+              this.service.hammerInitialized=false;
             this.router.navigateByUrl('/'+this.service.cluster+'/'+this.service.id+'/'+this.nextpage);
             })
           }
-          SlideDirective.hammerInitialized=true;
+          this.service.hammerInitialized=true;
 
 
 

@@ -11,15 +11,20 @@ declare var jQuery : any;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-
+  load=false;
+  message:string;
   constructor(){
 
    }
 
   
    ngOnInit(){
-    
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+      this.message="Err! Has your phone fallen down?";
+  }
+  else{
+    this.message = "Wanna get amazed? Try using your phone instead."
+  }
    }
 
 }

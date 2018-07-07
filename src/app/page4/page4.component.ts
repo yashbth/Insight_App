@@ -20,7 +20,8 @@ export class Page4Component implements OnInit {
     console.log(!this.service.location)
     if(!this.service.location){
       this.router.navigate(['../page1'],{relativeTo: this.route});
-      window.location.reload();
+      this.service.hammerInitialized=false;
+
     }
     this.x = this.formatToUnits(this.service.water_info[0]["Total_Volume_Dispensed"],0);
     // x = this.formatToUnits(500,0);

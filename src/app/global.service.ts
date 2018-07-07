@@ -17,9 +17,10 @@ export class GlobalService {
   info_flag: boolean = false;
   page5_flag: boolean = false;
   currPage: number;
-  hammerInitialized = true;
+  hammerInitialized = false;
   average_volume;
   flag:boolean=false;
+  dataAvailable:boolean=false;;
   id:string;
   location: string;
   cluster:string;
